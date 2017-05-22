@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^emsoft.net.pl$ [NC]
+RewriteRule ^(.*)$ https://www.emsoft.net.pl/$1 [R=301]
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
